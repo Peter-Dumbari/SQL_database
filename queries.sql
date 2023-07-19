@@ -35,6 +35,10 @@ BEGIN TRANSACTION;
 
 UPDATE animals
 SET species = 'unspecified';
+SELECT species from animals; -- verify that change was made
+ROLLBACK;
+
+SELECT species from animals;
 
 
 UPDATE animals
@@ -43,7 +47,7 @@ WHERE name LIKE '%mon';
 
 UPDATE animals
 SET species = 'pokemon'
-WHERE species IS `unspecified`;
+WHERE species IS NULL;
 
 SELECT * FROM animals;
 
@@ -82,8 +86,6 @@ WHERE weight_kg < 0;
 
 ROLLBACK;
 
-SELECT * FROM animals;
-
 COMMIT;
 
 
@@ -104,12 +106,12 @@ GROUP BY neutered
 ORDER BY escape_count DESC
 LIMIT 1;
 
-SELECT animals, MIN(weight_kg) AS min_weight, MAX(weight_kg) AS max_weight
+SELECT species, MIN(weight_kg) AS min_weight, MAX(weight_kg) AS max_weight
 FROM animals
-GROUP BY animals;
+GROUP BY species;
 
-SELECT animals, AVG(escape_attempts) AS average_escape_attempts
+SELECT species, AVG(escape_attempts) AS average_escape_attempts
 FROM animals
 WHERE date_of_birth BETWEEN '1990-01-01' AND '2000-12-31'
-GROUP BY animals;
+GROUP BY species;
 
