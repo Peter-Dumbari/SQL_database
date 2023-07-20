@@ -51,6 +51,12 @@ This repository includes files with plain SQL that can be used to recreate a dat
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
+### Key Features <a name="key-features"></a>
+
+- **[Created animals table]**
+- **[Inserted data into table]**
+- **[Performed queries on animal database]**
+
 ## 💻 Getting Started <a name="getting-started"></a>
 
 > Describe how a new developer could make use of your project.
@@ -81,6 +87,14 @@ git clone https://github.com/Peter-Dumbari/SQL_database.git
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 <!-- CONTRIBUTING -->
+
+## 🔭 Future Features <a name="future-features"></a>
+
+- [ ] **[Generating APIs]**
+- [ ] **[add "join table" for visits]**
+- [ ] **[Deployment]**
+
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 ## 🤝 Contributing <a name="contributing"></a>
 
