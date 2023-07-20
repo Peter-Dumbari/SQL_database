@@ -84,8 +84,6 @@ UPDATE animals
 SET weight_kg = weight_kg * -1
 WHERE weight_kg < 0;
 
-ROLLBACK;
-
 COMMIT;
 
 
@@ -117,9 +115,12 @@ GROUP BY species;
 
 
 -- update the species_id based on the animal_name
-
-UPDATE animals SET species_id = (SELECT id FROM species WHERE name = 'Digimon') WHERE name LIKE '%mon';
-UPDATE animals SET species_id = (SELECT id FROM species WHERE name = 'Pokemon') WHERE name NOT LIKE '%mon';
+UPDATE animals SET species_id = (
+  CASE
+    WHEN name LIKE '%mon' THEN (SELECT id FROM species WHERE name = 'Digimon')
+    ELSE (SELECT id FROM species WHERE name = 'Pokemon')
+  END
+);
 
 -- Modify your inserted animals to include owner information (owner_id):
 UPDATE animals SET owner_id = (

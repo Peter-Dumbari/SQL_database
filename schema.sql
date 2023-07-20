@@ -26,19 +26,16 @@ CREATE TABLE species (
     name VARCHAR(255)
 );
 
--- Drop the existing animals table if it exists
-DROP TABLE IF EXISTS animals;
 
--- Create the modified animals table
-CREATE TABLE animals (
-    id serial not null primary key,
-    name VARCHAR(255),
-    date_of_birth DATE,
-    escape_attempts INTEGER,
-    neutered BOOLEAN,
-    weight_kg DECIMAL,
-    species_id INTEGER,
-    owner_id INTEGER,
-    FOREIGN KEY (species_id) REFERENCES species (id),
-    FOREIGN KEY (owner_id) REFERENCES owners (id)
-);
+-- Make sure that id is set as autoincremented PRIMARY KEY
+ALTER TABLE animals
+MODIFY id INT NOT NULL AUTO_INCREMENT PRIMARY KEY;
+
+-- Remove column species
+ALTER TABLE animals DROP COLUMN species;
+
+-- Add column species_id which is a foreign key referencing species table
+ALTER TABLE animals ADD species_id int REFERENCES species(id);
+
+-- Add column owner_id which is a foreign key referencing the owners table
+ALTER TABLE animals ADD owner_id int REFERENCES owners(id);
