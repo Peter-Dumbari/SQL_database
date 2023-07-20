@@ -59,7 +59,12 @@ This repository includes files with plain SQL that can be used to recreate a dat
 
 ## 💻 Getting Started <a name="getting-started"></a>
 
-> Describe how a new developer could make use of your project.
+### Prerequisites
+
+In order to run this project you need:
+
+- PostgreSQL.
+- Code Editor.
 
 ### Setup
 
@@ -74,11 +79,7 @@ git clone https://github.com/Peter-Dumbari/SQL_database.git
 
 <!-- AUTHORS -->
 
-## 👥 Authors <a name="authors"></a>
-
-> Mention all of the collaborators of this project.
-
-👤 **Author1**
+## 👥 Author <a name="authors"></a>
 
 - GitHub: [@Peter-Dumbari](https://github.com/peter-dumbari)
 - Twitter: [@peterdumbary](https://twitter.com/Lazkkidy?s=09)
